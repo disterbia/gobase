@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package = "./";
+package greet;
+
+// 서비스 정의
+service Greeter {
+    // SayHello는 HelloRequest를 받아서 HelloReply를 반환합니다.
+    rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// 메시지 정의
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
